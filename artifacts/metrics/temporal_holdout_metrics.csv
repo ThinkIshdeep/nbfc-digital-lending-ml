@@ -1,0 +1,5 @@
+task,model,accuracy,precision,recall,f1,mae_crore,rmse_crore,r2,train_rows,test_rows,test_period
+classification,Majority Class Baseline,0.43137254901960786,0.43137254901960786,1.0,0.6027397260273972,,,,84,51,As on Dec 31 2020
+classification,Random Forest Classifier,0.3137254901960784,0.34146341463414637,0.6363636363636364,0.4444444444444444,,,,84,51,As on Dec 31 2020
+regression,Persistence Baseline,,,,,523.9803921568628,1521.0106740546678,-2.8439657921936674,84,51,As on Dec 31 2020
+regression,Gradient Boosting Regressor,,,,,1073.1943843944437,1795.4154465869165,-4.356053483144991,84,51,As on Dec 31 2020

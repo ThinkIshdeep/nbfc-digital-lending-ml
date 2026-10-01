@@ -1,0 +1,119 @@
+{
+  "files": [
+    {
+      "path": "data/raw/rbi/DIGITALLENDINGF6A90CA76A9B4B3E84AA0EBD24B307F1.PDF",
+      "bytes": 1795099,
+      "sha256": "1cb6c0a79fec5db3deb8b8e54aa90f33f93fbca7a0e80e9ee401e7a1e965fffc"
+    },
+    {
+      "path": "data/raw/rbi/NBFCSDCE07082026_AN.xlsx",
+      "bytes": 16458,
+      "sha256": "783c9c65f7cfd4a1445feed615b05bd97fdfb064ad8de0c0af714282dc9f64ce"
+    },
+    {
+      "path": "data/raw/rbi/NSE_NBFC_XBRL_example_2026-03-31.html",
+      "bytes": 90310,
+      "sha256": "3f0fe2eb4ede2cb75a1c0e12d0be220ba376202ead409008868b1ab454996f6f"
+    },
+    {
+      "path": "data/raw/rbi/RBI_AnnualPublications_TrendProgress_2024-25.html",
+      "bytes": 129247,
+      "sha256": "5c64be151e47dde7ca97e24784fcf5fb0ae03913ae3b2769405d19909ff1f8d5"
+    },
+    {
+      "path": "data/raw/rbi/RBI_DPI_March2024_press_release.html",
+      "bytes": 113268,
+      "sha256": "8695fcd0e0f172247846d0ecaefc22a1e3e154eccf96a53bbd13097ee167e323"
+    },
+    {
+      "path": "data/raw/rbi/RBI_NBFC_registry_2024_NBFCsandARCs26032024.PDF",
+      "bytes": 3800368,
+      "sha256": "71f829a0ba72947bdff9ae110e88b8f0a2599011ecec0fdf5e97a3c160f9c6ef"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI1_Consolidated_Balance_Sheet_NBFCs.html",
+      "bytes": 72751,
+      "sha256": "477bc55f66acb37092e648608d2f6e48de19fe49856b4d82fb67d95349db9f22"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI2_Consolidated_Balance_Sheet_NBFC_UL.html",
+      "bytes": 72570,
+      "sha256": "515752f32dcdae182e3064a60790a9132f5caf0cbe819335045520629c3ef023"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI3_Consolidated_Balance_Sheet_NBFC_ML.html",
+      "bytes": 72714,
+      "sha256": "0c69fabb9b91608634133d92ed2f9baa02f0842ec52cea58e96e36a18c4ecdf7"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI4_Consolidated_Balance_Sheet_NBFC_D.html",
+      "bytes": 72498,
+      "sha256": "34286dc94b67aa2707f623c6497bdd7cf5f1602dd16e69886a79b152adb6717c"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI5_Credit_to_Various_Sectors_by_NBFCs.html",
+      "bytes": 72366,
+      "sha256": "e8e44a13129337e9b25e6107a387ece12eeb9ff8771dd4b4a226257c3bd16d5a"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI6_Financial_Performance_NBFC_UL.html",
+      "bytes": 68360,
+      "sha256": "805103a49e9f3200fa9a42394d609f6c1f016a0b81c623bf2306c6461ff8b73c"
+    },
+    {
+      "path": "data/raw/rbi/RBI_TP2024-25_Appendix_VI7_Financial_Performance_NBFC_ML.html",
+      "bytes": 68377,
+      "sha256": "678bb281209ebb8ea9434c4ea97c68646dbb456ad2948c3ac34272ed019f1130"
+    },
+    {
+      "path": "data/processed/NBFC_ML_Transition_Dataset.csv",
+      "bytes": 16815,
+      "sha256": "7c2310727041aac9c8204bf9976a79919e621875953fc7fdd3573c4c6023dfae"
+    },
+    {
+      "path": "data/processed/NBFC_ML_Transition_Dataset_snapshot.csv",
+      "bytes": 15547,
+      "sha256": "186c3e9acfac82f25b7c20819568a8274ea97e66ee3f6220dd802f587e351518"
+    },
+    {
+      "path": "data/processed/digital_lending_long_clean.csv",
+      "bytes": 10235,
+      "sha256": "97d6531c833e422f4494eed98ea0a5e02553bc8505737be7f363efbfe68d3f5f"
+    },
+    {
+      "path": "data/processed/digital_lending_period_summary.csv",
+      "bytes": 449,
+      "sha256": "c9b22468e7568cfce2a01075aa6bda04fdef3c7475414e194c9b95e0ac15a65e"
+    },
+    {
+      "path": "data/processed/digital_lending_product_mix.csv",
+      "bytes": 434,
+      "sha256": "f7845cdf444092ed4312f9425be2438ad62b42758b8f085adc17332897c07bb4"
+    },
+    {
+      "path": "data/processed/digital_lending_tenure.csv",
+      "bytes": 164,
+      "sha256": "dbb413a002fc4421caf262cdaef5d4b7c47a6be7edd64f3212f2882b5e223e4f"
+    },
+    {
+      "path": "data/processed/digital_lending_wide_clean.csv",
+      "bytes": 3480,
+      "sha256": "23064ebd36bbd72d23d99afd5ff993ff0bd5b90f6b7b1811c06a8d99697ef0e4"
+    },
+    {
+      "path": "data/processed/rbi_dpi_clean.csv",
+      "bytes": 283,
+      "sha256": "710036f853044f3306558a933b8e2fe1593409278584281d6079005abb711ac9"
+    },
+    {
+      "path": "data/processed/rbi_nbfc_registry_clean.csv",
+      "bytes": 721053,
+      "sha256": "b4ae165d7224ca73e3c1291d916002d69bff706a02bbfafae11b083646ee20de"
+    },
+    {
+      "path": "data/processed/rbi_nbfc_sectoral_credit_long.csv",
+      "bytes": 7201,
+      "sha256": "c2aa3e17384d0b6c1bb3d16d91c7caa30ac2b4cd1a13f7b096075d9d595ee065"
+    }
+  ]
+}

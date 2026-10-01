@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NBFC Digital Lending Intelligence — model-backed analytics for aggregate RBI digital lending data.">
+  <title>NBFC Digital Lending Intelligence</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div>
+          <strong>NBFC Intelligence</strong>
+          <span>Digital Lending ML</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-item active" data-view="overview"><span>01</span> Overview</button>
+        <button class="nav-item" data-view="predict"><span>02</span> Predict</button>
+        <button class="nav-item" data-view="model-lab"><span>03</span> Model Lab</button>
+        <button class="nav-item" data-view="segments"><span>04</span> Segments</button>
+        <button class="nav-item" data-view="data"><span>05</span> Data</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="status-dot"><i></i> API connected</div>
+        <small>Aggregate research system · v1.1.0</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div>
+          <p class="eyebrow">RBI PUBLIC DATA · MODEL SERVING</p>
+          <h1 id="pageTitle">Digital Lending Overview</h1>
+        </div>
+        <div class="topbar-meta">
+          <span class="pill" id="readyPill">Checking model...</span>
+          <span class="updated">Data snapshot · 31 Dec 2020</span>
+        </div>
+      </header>
+
+      <section class="view active" id="view-overview">
+        <div class="hero-row">
+          <div>
+            <p class="hero-kicker">THE OPERATING PICTURE</p>
+            <h2>See the lending pattern before you touch the model.</h2>
+            <p class="hero-copy">A compact decision workspace for disbursement trends, loan volume, ticket size and model behaviour. Every KPI is tied to the packaged public dataset.</p>
+          </div>
+          <div class="hero-note">
+            <span>Scope</span>
+            <strong>Aggregate NBFC analysis</strong>
+            <small>Not a borrower approval or credit-risk decision engine.</small>
+          </div>
+        </div>
+
+        <div class="metric-grid" id="summaryCards"></div>
+
+        <div class="grid-2">
+          <article class="panel chart-panel">
+            <div class="panel-head"><div><span class="eyebrow">ACTIVITY</span><h3>Reported digital disbursement</h3></div><span class="muted">₹ crore</span></div>
+            <div class="chart-wrap"><svg id="disbursementChart" viewBox="0 0 760 280" role="img" aria-label="Disbursement trend"></svg></div>
+          </article>
+          <article class="panel chart-panel">
+            <div class="panel-head"><div><span class="eyebrow">VOLUME</span><h3>Reported loan count</h3></div><span class="muted">loans</span></div>
+            <div class="chart-wrap"><svg id="loanChart" viewBox="0 0 760 280" role="img" aria-label="Loan count trend"></svg></div>
+          </article>
+        </div>
+
+        <div class="grid-2 lower-grid">
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">PRODUCT MIX</span><h3>Where the activity sits</h3></div></div>
+            <div class="mix-list" id="productMix"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="eyebrow">MODEL HEALTH</span><h3>Generalisation snapshot</h3></div><span class="badge caution">Research scale</span></div>
+            <div class="health-grid" id="healthGrid"></div>
+            <div class="callout">The final chronological check is shown beside grouped cross-validation so the model's limitations stay visible.</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-predict">
+        <div class="section-intro">
+          <div><p class="hero-kicker">MODEL SERVING</p><h2>Run an analytical scenario</h2><p>Enter one current-period observation. The API returns direction, estimated next-period amount, segment and an anomaly signal.</p></div>
+          <span class="badge">POST /v1/predict</span>
+        </div>
+        <div class="predict-grid">
+          <form class="panel form-panel" id="predictForm">
+            <div class="field"><label for="disbursement">Current disbursement <span>₹ crore</span></label><input id="disbursement" type="number" min="0" step="0.01" value="100"></div>
+            <div class="field"><label for="loanCount">Current loan count</label><input id="loanCount" type="number" min="0" step="1" value="10000"></div>
+            <div class="field"><label for="avgTicket">Average ticket <span>₹</span></label><input id="avgTicket" type="number" min="0.01" step="0.01" value="10000"></div>
+            <div class="field"><label for="periodIndex">Current period</label><select id="periodIndex"><option value="0">FY2017 → FY2018</option><option value="1">FY2018 → FY2019</option><option value="2">FY2019 → FY2020</option><option value="3">FY2020 → Dec 2020</option></select></div>
+            <button class="primary-btn" type="submit">Run model <span>→</span></button>
+            <p class="form-note">This score describes patterns in the research dataset. It is not an underwriting recommendation.</p>
+          </form>
+          <article class="panel prediction-panel" id="predictionResult">
+            <div class="empty-state"><div class="empty-icon">↗</div><h3>No scenario yet</h3><p>Run the model to populate the result panel.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-model-lab">
+        <div class="section-intro"><div><p class="hero-kicker">MODEL LAB</p><h2>How the models behave</h2><p>Compare the candidates, then inspect the chronological holdout without hiding the weak spots.</p></div></div>
+        <div class="grid-2">
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">CLASSIFICATION</span><h3>Will the next period increase?</h3></div><span class="muted">F1</span></div><div id="classificationTable"></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">REGRESSION</span><h3>Predict next-period amount</h3></div><span class="muted">RMSE</span></div><div id="regressionTable"></div></article>
+        </div>
+        <div class="grid-2 lower-grid">
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">OUT-OF-TIME CHECK</span><h3>Final-period holdout</h3></div><span class="badge caution">31 Dec 2020</span></div><div id="temporalTable"></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">INTERPRETABILITY</span><h3>Classifier feature importance</h3></div></div><div id="featureBars"></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-segments">
+        <div class="section-intro"><div><p class="hero-kicker">BEHAVIOUR SEGMENTS</p><h2>Observed lending archetypes</h2><p>Three clusters are calculated from the latest complete observations using log-transformed disbursement, loan count and ticket size.</p></div></div>
+        <div class="segment-cards" id="segmentCards"></div>
+        <article class="panel"><div class="panel-head"><div><span class="eyebrow">ANOMALY REVIEW</span><h3>Potentially unusual observations</h3></div><span class="badge caution">Review, don't label</span></div><div id="anomalyTable"></div></article>
+      </section>
+
+      <section class="view" id="view-data">
+        <div class="section-intro"><div><p class="hero-kicker">DATA FOUNDATION</p><h2>Know exactly what is in the model</h2><p>Source snapshots stay separate from processed analytical tables, with explicit coverage and integrity notes.</p></div></div>
+        <div class="data-cards">
+          <article class="panel"><span class="eyebrow">CORE</span><strong>305</strong><p>Respondent-period cells from 61 visible RBI respondent rows.</p></article>
+          <article class="panel"><span class="eyebrow">ML</span><strong>135</strong><p>Complete current → next-period transitions across 51 respondent groups.</p></article>
+          <article class="panel"><span class="eyebrow">SUPPORT</span><strong>75</strong><p>Sector/date NBFC outstanding-credit cells retained as contextual data.</p></article>
+          <article class="panel"><span class="eyebrow">DPI</span><strong>13</strong><p>RBI Digital Payments Index observations retained separately.</p></article>
+        </div>
+        <div class="grid-2 lower-grid">
+          <article class="panel"><span class="eyebrow">INPUT SCHEMA</span><h3>Prediction features</h3><div class="schema-list"><code>current_disbursement_crore</code><code>current_loan_count</code><code>current_average_ticket_rupees</code><code>period_index</code></div></article>
+          <article class="panel"><span class="eyebrow">BOUNDARY</span><h3>What the data cannot prove</h3><p class="body-copy">The public sources do not directly measure each NBFC's internal analytics-system adoption, borrower-level approval quality, repayment, default, processing time or profitability. The model therefore supports descriptive and predictive research analysis—not a causal claim about analytics driving disbursement.</p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

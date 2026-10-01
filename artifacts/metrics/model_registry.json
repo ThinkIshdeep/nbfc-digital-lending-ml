@@ -1,0 +1,117 @@
+{
+  "schema_version": "2026-10-01",
+  "best_classifier": "Random Forest Classifier",
+  "best_regressor": "Gradient Boosting Regressor",
+  "transition_rows": 135,
+  "nbfc_groups": 51,
+  "latest_complete_observations": 58,
+  "anomaly_flags": 6,
+  "classification_metrics": {
+    "Logistic Regression": {
+      "accuracy": 0.6962962962962963,
+      "precision": 0.8311688311688312,
+      "recall": 0.6956521739130435,
+      "f1": 0.757396449704142
+    },
+    "Random Forest Classifier": {
+      "accuracy": 0.7333333333333333,
+      "precision": 0.7916666666666666,
+      "recall": 0.8260869565217391,
+      "f1": 0.8085106382978723
+    }
+  },
+  "regression_metrics": {
+    "Dummy Median": {
+      "MAE_crore": 569.3851851851852,
+      "RMSE_crore": 1357.903191607479,
+      "R2": -0.1606075703374259
+    },
+    "Ridge": {
+      "MAE_crore": 733.2003379486321,
+      "RMSE_crore": 1571.1030839479706,
+      "R2": -0.5536641440664289
+    },
+    "Random Forest Regressor": {
+      "MAE_crore": 526.388401966223,
+      "RMSE_crore": 1165.769130054574,
+      "R2": 0.14459283702775627
+    },
+    "Gradient Boosting Regressor": {
+      "MAE_crore": 433.95166442815207,
+      "RMSE_crore": 1112.6857304082394,
+      "R2": 0.2207212784671546
+    }
+  },
+  "temporal_holdout": [
+    {
+      "task": "classification",
+      "model": "Majority Class Baseline",
+      "accuracy": 0.43137254901960786,
+      "precision": 0.43137254901960786,
+      "recall": 1.0,
+      "f1": 0.6027397260273972,
+      "mae_crore": null,
+      "rmse_crore": null,
+      "r2": null,
+      "train_rows": 84,
+      "test_rows": 51,
+      "test_period": "As on Dec 31 2020"
+    },
+    {
+      "task": "classification",
+      "model": "Random Forest Classifier",
+      "accuracy": 0.3137254901960784,
+      "precision": 0.34146341463414637,
+      "recall": 0.6363636363636364,
+      "f1": 0.4444444444444444,
+      "mae_crore": null,
+      "rmse_crore": null,
+      "r2": null,
+      "train_rows": 84,
+      "test_rows": 51,
+      "test_period": "As on Dec 31 2020"
+    },
+    {
+      "task": "regression",
+      "model": "Persistence Baseline",
+      "accuracy": null,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "mae_crore": 523.9803921568628,
+      "rmse_crore": 1521.0106740546678,
+      "r2": -2.8439657921936674,
+      "train_rows": 84,
+      "test_rows": 51,
+      "test_period": "As on Dec 31 2020"
+    },
+    {
+      "task": "regression",
+      "model": "Gradient Boosting Regressor",
+      "accuracy": null,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "mae_crore": 1073.1943843944437,
+      "rmse_crore": 1795.4154465869165,
+      "r2": -4.356053483144991,
+      "train_rows": 84,
+      "test_rows": 51,
+      "test_period": "As on Dec 31 2020"
+    }
+  ],
+  "random_state": 42,
+  "group_cv": "5-fold GroupKFold grouped by nbfc_respondent_id",
+  "temporal_holdout_period": "As on Dec 31 2020",
+  "feature_columns": [
+    "current_disbursement_crore",
+    "current_loan_count",
+    "current_average_ticket_rupees",
+    "period_index"
+  ],
+  "target_columns": [
+    "next_disbursement_increased",
+    "next_disbursement_crore"
+  ],
+  "serving_boundary": "Aggregate analytical scoring only; not a credit approval or risk-decision system."
+}

@@ -1,0 +1,32 @@
+{
+  "processed_datasets": [
+    "digital_lending_long_clean.csv",
+    "digital_lending_wide_clean.csv",
+    "digital_lending_period_summary.csv",
+    "digital_lending_product_mix.csv",
+    "digital_lending_tenure.csv",
+    "rbi_dpi_clean.csv",
+    "rbi_nbfc_registry_clean.csv",
+    "rbi_nbfc_sectoral_credit_long.csv"
+  ],
+  "raw_source_files": [
+    "DIGITALLENDINGF6A90CA76A9B4B3E84AA0EBD24B307F1.PDF",
+    "NBFCSDCE07082026_AN.xlsx",
+    "NSE_NBFC_XBRL_example_2026-03-31.html",
+    "RBI_AnnualPublications_TrendProgress_2024-25.html",
+    "RBI_DPI_March2024_press_release.html",
+    "RBI_NBFC_registry_2024_NBFCsandARCs26032024.PDF",
+    "RBI_TP2024-25_Appendix_VI1_Consolidated_Balance_Sheet_NBFCs.html",
+    "RBI_TP2024-25_Appendix_VI2_Consolidated_Balance_Sheet_NBFC_UL.html",
+    "RBI_TP2024-25_Appendix_VI3_Consolidated_Balance_Sheet_NBFC_ML.html",
+    "RBI_TP2024-25_Appendix_VI4_Consolidated_Balance_Sheet_NBFC_D.html",
+    "RBI_TP2024-25_Appendix_VI5_Credit_to_Various_Sectors_by_NBFCs.html",
+    "RBI_TP2024-25_Appendix_VI6_Financial_Performance_NBFC_UL.html",
+    "RBI_TP2024-25_Appendix_VI7_Financial_Performance_NBFC_ML.html"
+  ],
+  "academic_files": [
+    "Field_Project_Presentation.pptx",
+    "Field_Project_Report.pdf",
+    "Viva_Study_Guide.md"
+  ]
+}

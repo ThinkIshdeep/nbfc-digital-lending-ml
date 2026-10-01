@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nbfc-digital-lending-ml"
+version = "1.1.0"
+description = "Reproducible ML pipeline for aggregate NBFC digital-lending data"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Ishdeep Singh"},
+  {name = "Abir Srivastava"}
+]
+dependencies = [
+  "pandas==2.2.3",
+  "numpy==2.3.5",
+  "scikit-learn==1.8.0",
+  "matplotlib==3.10.8",
+  "joblib==1.5.3",
+  "fastapi==0.128.2",
+  "uvicorn==0.48.0",
+  "pydantic==2.13.4",
+]
+
+[project.scripts]
+nbfc-train = "nbfc_ml.cli:train_command"
+nbfc-predict = "nbfc_ml.cli:predict_command"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

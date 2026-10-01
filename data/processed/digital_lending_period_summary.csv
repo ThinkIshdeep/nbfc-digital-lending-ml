@@ -1,0 +1,6 @@
+period,row_cells,amount_observations,amount_total_crore,loan_count_observations,loan_count_total,both_numeric_cells,weighted_average_ticket_rupees,median_ticket_rupees
+FY2017,61,18,741.0,20,101588.0,18,72973.29,99873.21
+FY2018,61,29,3539.0,31,1147545.0,29,30840.8,31384.12
+FY2019,61,37,13256.0,38,8407168.0,37,15767.61,21366.01
+FY2020,61,53,42297.0,53,49211386.0,52,8594.98,15618.84
+As on Dec 31 2020,61,59,22780.0,59,22389181.0,58,9130.76,11171.17
